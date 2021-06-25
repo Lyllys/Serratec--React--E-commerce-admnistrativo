@@ -1,0 +1,31 @@
+
+
+.texto-banner  {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    padding: 150px 80px;
+
+}
+
+.container {
+    margin: 0 auto; 
+    max-width: 100%;
+    padding: 0;
+}
+
+.img-fluid {
+    height: 417px;
+   
+}
+
+@media only screen and (max-width: 768px){
+    .img-fluid{
+       height: auto;
+       margin-top: 15px;
+    }
+
+    .texto-banner  {
+        padding: 20px 40px 60px 40px;
+    }
+
+}

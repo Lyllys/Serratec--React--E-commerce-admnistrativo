@@ -1,0 +1,26 @@
+.bg-light {
+    background-color: #ffffff !important;
+}
+
+
+.navbar-menu {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.nav-link-menu {
+    font-weight: bold;
+    color: #DF5E88;
+}
+
+
+.nav-link-menu:hover {
+    background-color: #DF5E88 ;
+    color:white !important; 
+    border-radius: 20px;
+
+}
+
+.nav-link:visited{
+    color:#DF5E88;
+}

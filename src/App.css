@@ -1,38 +1,58 @@
-.App {
+body {
+  overflow-x: hidden;
+}
+
+.btn.btn-outline-primary,.btn.btn-primary {
+  color:#DF5E88;
+  border: 2px solid #DF5E88;
+  background-color: white;
+}
+
+.btn.btn-outline-primary:hover,.btn.btn-primary:hover {
+  color:white;
+  border: 2px solid #DF5E88;
+  background-color: #DF5E88;
+}
+
+
+.titulo-produto-categoria {
   text-align: center;
+  margin-top: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.botao-cadastrar {
+  display        : flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top     : 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.tabela-produtos-categorias {
+  width     : 90%;
+  margin    : auto;
+  margin-top: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.formulario-produto-categoria {
+  width     : 60%;
+  margin    : auto;
+  margin-top: 50px;
+}
+
+.botao-cadastrar-novo, .mensagem-sucesso {
+  display        : flex;
+  justify-content: center;
+  margin-top     : 50px;
+  text-align: center;
+
+}
+
+.botao-cadastro {
+  width: 50%;
+}
+
+@media only screen and (max-width: 768px){
+  body{
+      overflow-x: hidden;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
 }
