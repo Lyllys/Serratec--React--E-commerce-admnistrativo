@@ -49,7 +49,7 @@ const Produtos = () => {
             <td>{produto.descricao}</td>
             {/* <td>{produto.categoria}</td> não funciona */}
             <td>
-              <Link className="btn btn-sm btn-outline-info" to={`/produtos/editar/${produto.id}`}>editar</Link>
+              <Link className="btn btn-sm btn-outline-info" to={`/produtos/editar/${produto.nome}`}>editar</Link>
             </td>
             <td>
               <button type="button" className="ml-2 btn btn-sm btn-outline-danger" onClick={() => { excluir(produto) }}>excluir</button>

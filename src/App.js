@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/categorias/cadastrar">
             <NovaCategoria />
           </Route>
-          <Route exact path="produtos/editar/:id">
+          <Route path="/produtos/editar/:nomedoproduto">
             <EditarProduto />
           </Route>
       </Switch>

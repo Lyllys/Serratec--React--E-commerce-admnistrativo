@@ -15,7 +15,7 @@ const NovoProduto = () => {
     const [quantidade, setQuantidade] = useState(0);
     const [categoriaId, setCategoriaId] = useState(0);
     const [categorias, setCategorias] = useState([]);
-    const [arquivo, setArquivo] = useState('');
+    const [url, setUrl] = useState('');
 
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const NovoProduto = () => {
             categoria: {
                 id: categoriaId
             },
-            imgBase64: arquivo
+            url: url
         }
 
         console.log(produto)
@@ -58,17 +58,6 @@ const NovoProduto = () => {
                setMensagemErro('')
              }, 4500);
           })
-    }
-
-    const reader = new FileReader();
-
-    const manipuladorArquivo = (evento) => {
-        const arquivos = evento.target.files;
-        const arquivo = arquivos[0];
-        reader.readAsDataURL(arquivo);
-        reader.onload = () => {
-            setArquivo(reader.result);
-        };
     }
 
 
@@ -97,12 +86,13 @@ const NovoProduto = () => {
             <div className="col-md-4">
                 <label  className="form-label">Categoria</label>
                 <select value={categoriaId} onChange={(evento) => setCategoriaId(evento.target.value)} className="form-select">
+                <option value=""></option>
                 {categorias.map(categoria => <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>)}
                 </select>
             </div>
             <div className="col-md-12">
                 <label className="form-label">Imagem</label>
-                <input onChange={manipuladorArquivo} type="file" className="form-control" id="formFile" />
+                <input onChange={(evento) => setUrl(evento.target.value)} type="text" value={url} className="form-control" id="formFile" />
             </div>
             <div className="col-12 botao-cadastrar-novo">
                 <button type="submit" className="btn btn-primary botao-cadastro">Cadastar</button>

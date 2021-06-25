@@ -20,7 +20,7 @@ const Banner = () => {
                     <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img className="img-fluid d-block w-100" src={logo} alt="logo da Candy Sweet" />
+                                <img className="img-fluid d-block w-100" src={logo} alt="logo da Candy Love" />
                             </div>
                             <div className="carousel-item">
                                 <img className="img-fluid d-block w-100" src={macarrones} alt="foto de macarrones" />
