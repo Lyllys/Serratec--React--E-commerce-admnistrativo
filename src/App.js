@@ -8,6 +8,7 @@ import Categorias from './Paginas/Categorias';
 import NovoProduto from './Paginas/Produtos/NovoProduto';
 import NovaCategoria from './Paginas/Categorias/NovaCategoria';
 import EditarProduto from './Paginas/Produtos/EditarProduto';
+import Pagina404 from './Paginas/Pagina404/Pagina404';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           <Route path="/produtos/editar/:nomedoproduto">
             <EditarProduto />
           </Route>
+          <Route>
+        <Pagina404 />
+      </Route>
       </Switch>
     </BrowserRouter>
   );
