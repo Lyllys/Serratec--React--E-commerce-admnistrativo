@@ -1,15 +1,22 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import http from "../../Componentes/http";
+import MensagemSucesso from "../../Componentes/Mensagem/MensagemSucesso";
+import MensagemErro from "../../Componentes/Mensagem/MensagemErro";
+
+
 const EditarProduto = () => {
 
-    const {nomedoproduto } = useParams();
+
+    const [mensagemSucesso, setMensagemSucesso] = useState('');
+    const [mensagemErro, setMensagemErro] = useState('');
+    const { nomedoproduto } = useParams();
     const [nome, setNome] = useState('');
     const [codigo, setCodigo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [preco, setPreco] = useState(0);
     const [quantidade, setQuantidade] = useState(0);
-    const [id , setId]= useState(0);
+    const [id, setId] = useState(0);
     // const [categoriaId, setCategoriaId] = useState(0);
     // const [categorias, setCategorias] = useState([]);
     const [url, setUrl] = useState('');
@@ -38,15 +45,26 @@ const EditarProduto = () => {
             // categoria: {
             //     id: categoriaId
             // },
-           url: url
+            url: url
         }
         http.put('produto/' + id, produto)
             .then(resposta => {
                 console.log(resposta.data)
+                setMensagemSucesso("Alterações realizadas com sucesso")
+                setTimeout(() => {
+                    setMensagemSucesso('')
+                }, 3000);
             })
             .catch(erro => {
                 console.log('Algo deu errado')
-                console.log(erro)
+                if (erro.response.data && erro.response.data.message) {
+                    setMensagemErro(erro.response.data.message)
+                } else {
+                    setMensagemErro('OPS... um erro não esperado.')
+                }
+                setTimeout(() => {
+                    setMensagemErro('')
+                }, 4500);
             })
     }
 
@@ -89,6 +107,10 @@ const EditarProduto = () => {
     </div> */}
             <div className="col-12 botao-cadastrar-novo">
                 <button type="submit" className="btn btn-primary botao-cadastro">Salvar Alterações</button>
+            </div>
+            <div className="col-12 mensagem-sucesso">
+                {mensagemSucesso && <MensagemSucesso msgSucesso={mensagemSucesso} />}
+                {mensagemErro && <MensagemErro msgErro={mensagemErro} />}
             </div>
         </form>
     )

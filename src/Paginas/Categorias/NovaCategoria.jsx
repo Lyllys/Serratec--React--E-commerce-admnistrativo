@@ -23,19 +23,19 @@ const NovaCategoria = () => {
                 setMensagemSucesso("Categoria cadastrada com sucesso")
                 setTimeout(() => {
                     setMensagemSucesso('')
-                  }, 3000);
+                }, 3000);
             })
             .catch(erro => {
                 console.log('Algo deu errado')
-                 if (erro.response.data && erro.response.data.message) {
-                   setMensagemErro(erro.response.data.message)
-                 } else {
-                   setMensagemErro('OPS... um erro não esperado.')
-                 }
-                 setTimeout(() => {
-                   setMensagemErro('')
-                 }, 4500);
-              })
+                if (erro.response.data && erro.response.data.message) {
+                    setMensagemErro(erro.response.data.message)
+                } else {
+                    setMensagemErro('OPS... um erro não esperado.')
+                }
+                setTimeout(() => {
+                    setMensagemErro('')
+                }, 4500);
+            })
     }
 
 
@@ -50,12 +50,11 @@ const NovaCategoria = () => {
                 <input value={descricao} onChange={(evento) => setDescricao(evento.target.value)} required className="form-control" />
             </div>
             <div className="col-12 botao-cadastrar-novo">
-                <button type="submit" className="btn btn-primary botao-cadastro">Cadastar</button>
+                <button type="submit" className="btn btn-primary botao-cadastro">Cadastrar</button>
             </div>
             <div className="col-12 mensagem-sucesso">
-            { mensagemSucesso && <MensagemSucesso msgSucesso={mensagemSucesso} /> }
-            { mensagemErro && <MensagemErro msgErro={mensagemErro} /> }
-
+                {mensagemSucesso && <MensagemSucesso msgSucesso={mensagemSucesso} />}
+                {mensagemErro && <MensagemErro msgErro={mensagemErro} />}
             </div>
         </form>
     )

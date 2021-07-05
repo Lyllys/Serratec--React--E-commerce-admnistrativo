@@ -95,12 +95,11 @@ const NovoProduto = () => {
                 <input onChange={(evento) => setUrl(evento.target.value)} type="text" value={url} className="form-control" id="formFile" />
             </div>
             <div className="col-12 botao-cadastrar-novo">
-                <button type="submit" className="btn btn-primary botao-cadastro">Cadastar</button>
+                <button type="submit" className="btn btn-primary botao-cadastro">Cadastrar</button>
             </div>
             <div className="col-12 mensagem-sucesso">
             { mensagemSucesso && <MensagemSucesso msgSucesso={mensagemSucesso} /> }
             { mensagemErro && <MensagemErro msgErro={mensagemErro} /> }
-
             </div>
         </form>
     )
